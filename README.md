@@ -22,52 +22,30 @@ Program to implement univariate Linear Regression to fit a straight line using l
 Developed by: IYYANAR S
 RegisterNumber:212222240036  
 
+*/
 import numpy as np
 import matplotlib.pyplot as plt
-
-# assign values in array
-
-X = np.array([0,1,2,3,4,5,6,7,8,9])
-Y = np.array([1,3,2,5,7,8,8,9,10,12])
-
-# to find the mean values of X and Y
-
-X_mean = np.mean(X)
-print("Mean of X =",X_mean)
-Y_mean = np.mean(Y)
-print("Mean of Y =",Y_mean)
-
-# To Find The Summation
-
-num = 0
-denum = 0
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+Xmean=np.mean(X)
+Ymean=np.mean(Y)
+num,den=0,0 # num = numerator, den = denomenator
 for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denum+=(X[i]-X_mean)**2
-
-# To find the slope for least square method
-
-m=num/denum
-
-  # To find the Y intercept 
-
-b=Y_mean-m*(X_mean)
-print("m =",m)
-print("b =",b)
-
-#equation of the line 
-Y_pred = m*X+b
+  num+=(X[i]-Xmean)*(Y[i]-Ymean)
+  den+=(X[i]-Xmean)**2
+m=num/den
+c=Ymean-m*Xmean
+print(m,c)
+Y_pred=m*X+c
 print(Y_pred)
-
-#plot graph
-plt.scatter(X,Y,color='green')
-plt.plot(X,Y_pred,color='red')
+plt.scatter(X,Y)
+plt.plot(X,Y_pred,color="red")
 plt.show()
 
 ```
 
 ## Output:
-![mlsc](https://github.com/Iyyanar22009120/Find-the-best-fit-line-using-Least-Squares-Method/assets/118680259/66b15102-c4f0-44cd-9a57-7bb3a96f72cc)
+![image](https://github.com/Iyyanar22009120/Find-the-best-fit-line-using-Least-Squares-Method/assets/118680259/e8a3716c-7f67-4b91-82e3-bab8cd2ef4c6)
 
 
 
