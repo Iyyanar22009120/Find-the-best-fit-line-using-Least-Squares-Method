@@ -25,27 +25,28 @@ RegisterNumber:212222240036
 */
 import numpy as np
 import matplotlib.pyplot as plt
-X=np.array(eval(input()))
-Y=np.array(eval(input()))
-Xmean=np.mean(X)
-Ymean=np.mean(Y)
-num,den=0,0 # num = numerator, den = denomenator
-for i in range(len(X)):
-  num+=(X[i]-Xmean)*(Y[i]-Ymean)
-  den+=(X[i]-Xmean)**2
-m=num/den
-c=Ymean-m*Xmean
-print(m,c)
-Y_pred=m*X+c
-print(Y_pred)
-plt.scatter(X,Y)
-plt.plot(X,Y_pred,color="red")
+x = np.array(eval(input()))
+y = np. array(eval(input()))
+xm=np.mean(x)
+ym=np.mean(y)
+num=0
+denom=0
+for i in range(len(x)):
+  num+=(x[i]-xm)*(y[i]-ym)
+  denom+=(x[i]-xm)**2
+m=num/denom
+b=ym-m*xm
+yp = m*x+b
+print(yp)
+plt.scatter(x,y)
+plt.plot(x,yp,color="red")
 plt.show()
 
 ```
 
 ## Output:
-![image](https://github.com/Iyyanar22009120/Find-the-best-fit-line-using-Least-Squares-Method/assets/118680259/e8a3716c-7f67-4b91-82e3-bab8cd2ef4c6)
+![exp 1 output](https://github.com/Iyyanar22009120/Find-the-best-fit-line-using-Least-Squares-Method/assets/118680259/ac3de1fc-6df3-4d8b-925b-1fc4897c2db2)
+
 
 
 
